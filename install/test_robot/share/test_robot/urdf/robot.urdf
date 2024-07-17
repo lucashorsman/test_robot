@@ -1,0 +1,89 @@
+<robot name="onshape">
+    <link name="wheels">
+        <link name="dummy">
+        </link>
+        <visual>
+            <origin xyz="-0.010066849791781361939 -0.058318893075270938908 -0.012793734000476300605"
+                rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:////home/riplab/microros_ws/src/test_robot/meshes/base.stl" />
+            </geometry>
+            <material name="base_material">
+                <color
+                    rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.010066849791781361939 -0.058318893075270938908 -0.012793734000476300605"
+                rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:////home/riplab/microros_ws/src/test_robot/meshes/base.stl" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.015333150208218635294 -0.024663893075270941491 -0.004538734000476290012"
+                rpy="0 -0.40810286715460225571 3.141592653589793116" />
+            <geometry>
+                <mesh filename="file:////home/riplab/microros_ws/src/test_robot/meshes/wheels.stl" />
+            </geometry>
+            <material name="wheels_material">
+                <color
+                    rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.015333150208218635294 -0.024663893075270941491 -0.004538734000476290012"
+                rpy="0 -0.40810286715460225571 3.141592653589793116" />
+            <geometry>
+                <mesh filename="file:////home/riplab/microros_ws/src/test_robot/meshes/wheels.stl" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.015333150208218633559 -0.053873893075270934405 -0.0045387340004762978182"
+                rpy="0 1.2027147718070467786 0" />
+            <geometry>
+                <mesh filename="file:////home/riplab/microros_ws/src/test_robot/meshes/wheels.stl" />
+            </geometry>
+            <material name="wheels_material">
+                <color
+                    rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.015333150208218633559 -0.053873893075270934405 -0.0045387340004762978182"
+                rpy="0 1.2027147718070467786 0" />
+            <geometry>
+                <mesh filename="file:////home/riplab/microros_ws/src/test_robot/meshes/wheels.stl" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.024858150208218628835 -0.023393893075270948134 0.010066265999523701241"
+                rpy="0 -0 3.1415926535897913396" />
+            <geometry>
+                <mesh filename="file:////home/riplab/microros_ws/src/test_robot/meshes/imu.stl" />
+            </geometry>
+            <material name="imu_material">
+                <color
+                    rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.024858150208218628835 -0.023393893075270948134 0.010066265999523701241"
+                rpy="0 -0 3.1415926535897913396" />
+            <geometry>
+                <mesh filename="file:////home/riplab/microros_ws/src/test_robot/meshes/imu.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.010437918650661660858 -0.038554615374067152667 0.00013924592182036239232"
+                rpy="0 0 0" />
+            <mass value="0.034335575629678212473" />
+            <inertia ixx="8.6195860204220961336e-06" ixy="-2.7656867710432847844e-07"
+                ixz="-2.0371075788774967093e-07" iyy="5.9720927237102116436e-06"
+                iyz="-3.2242717674571704259e-07" izz="1.0502071014924035751e-05" />
+        </inertial>
+    </link>
+
+
+
+</robot>

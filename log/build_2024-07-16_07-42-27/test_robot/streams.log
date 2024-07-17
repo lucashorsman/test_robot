@@ -1,0 +1,40 @@
+[0.012s] Invoking command in '/home/riplab/microros_ws/src/test_robot/build/test_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/riplab/microros_ws/src/test_robot/build/test_robot -- -j16 -l16
+[0.068s] Invoked command in '/home/riplab/microros_ws/src/test_robot/build/test_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/riplab/microros_ws/src/test_robot/build/test_robot -- -j16 -l16
+[0.089s] Invoking command in '/home/riplab/microros_ws/src/test_robot/build/test_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/riplab/microros_ws/src/test_robot/build/test_robot
+[0.095s] -- Install configuration: ""
+[0.096s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/config
+[0.097s] -- Installing: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/config/config.json
+[0.097s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/launch
+[0.097s] -- Installing: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/launch/test_robot.launch
+[0.097s] -- Installing: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/launch/test_robot.launch.py
+[0.097s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/maps
+[0.097s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/meshes
+[0.098s] -- Installing: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/meshes/part_1.stl
+[0.098s] -- Installing: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/meshes/wheels.stl
+[0.098s] -- Installing: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/meshes/base.stl
+[0.099s] -- Installing: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/meshes/imu.stl
+[0.099s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/models
+[0.100s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/params
+[0.100s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/rviz
+[0.100s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/rviz/rviz_basic_settings.rviz
+[0.100s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/src
+[0.100s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/urdf
+[0.100s] -- Installing: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/urdf/config.json
+[0.100s] -- Installing: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/urdf/robot.urdf
+[0.100s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/worlds
+[0.101s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/ament_index/resource_index/package_run_dependencies/test_robot
+[0.101s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/ament_index/resource_index/parent_prefix_path/test_robot
+[0.101s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/environment/ament_prefix_path.sh
+[0.101s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/environment/ament_prefix_path.dsv
+[0.101s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/environment/path.sh
+[0.102s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/environment/path.dsv
+[0.102s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/local_setup.bash
+[0.102s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/local_setup.sh
+[0.102s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/local_setup.zsh
+[0.102s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/local_setup.dsv
+[0.102s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/package.dsv
+[0.102s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/ament_index/resource_index/packages/test_robot
+[0.102s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/cmake/test_robotConfig.cmake
+[0.102s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/cmake/test_robotConfig-version.cmake
+[0.102s] -- Up-to-date: /home/riplab/microros_ws/src/test_robot/install/test_robot/share/test_robot/package.xml
+[0.103s] Invoked command in '/home/riplab/microros_ws/src/test_robot/build/test_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/riplab/microros_ws/src/test_robot/build/test_robot

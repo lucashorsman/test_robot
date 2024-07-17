@@ -1,0 +1,171 @@
+<robot name="onshape" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename="gazebo_control.xacro" />
+    <!-- <xacro:include filename="ros2_control.xacro" /> -->
+    <!-- <xacro:include filename="robot_core.xacro" /> -->
+    <!-- ros2 control stuff -->
+    <!-- <ros2_control name="GazeboSystem" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+        <joint name="left_wheel_joint">
+            <command_interface name="velocity">
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="right_wheel_joint">
+            <command_interface name="velocity">
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <state_interface name="velocity" />
+            <state_interface name="position" />
+        </joint>
+    </ros2_control> -->
+
+    <!-- gazebo stuff -->
+    <!-- <gazebo>
+        <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+            <parameters>$(find test_robot)/config/my_controllers.yaml</parameters>
+        </plugin>
+    </gazebo> -->
+
+
+    <!-- from onshape -->
+    <link name="base_link"></link>
+    <joint name="base_link_to_base" type="fixed">
+        <parent link="base_link" />
+        <child link="base" />
+        <origin rpy="0.0 0 0" xyz="0 0 0" />
+    </joint>
+    <link name="base">
+        <visual>
+            <origin xyz="-0.010066849791781361939 -0.058318893075270938908 -0.012793734000476300605"
+                rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file://$(find test_robot)/meshes/base.stl" />
+            </geometry>
+            <material name="base_material">
+                <color
+                    rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.010066849791781361939 -0.058318893075270938908 -0.012793734000476300605"
+                rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file://$(find test_robot)/meshes/base.stl" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.15993315020821863293 0.11168110692472901779 0.17720626599952371549"
+                rpy="0 -0 3.1415926535897913396" />
+            <geometry>
+                <mesh filename="file://$(find test_robot)/meshes/imu.stl" />
+            </geometry>
+            <material name="imu_material">
+                <color
+                    rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.15993315020821863293 0.11168110692472901779 0.17720626599952371549"
+                rpy="0 -0 3.1415926535897913396" />
+            <geometry>
+                <mesh filename="file://$(find test_robot)/meshes/imu.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.090727912630680265793 0.042498723769375031101 0.08876809881989008999"
+                rpy="0 0 0" />
+            <mass value="6.246631149239903813" />
+            <inertia ixx="0.042221042207173931082" ixy="-0.00028896824858569598871"
+                ixz="-0.00055422947547003318693" iyy="0.042253466058457457566"
+                iyz="-0.00054544071457295431084" izz="0.041604660645204828706" />
+        </inertial>
+    </link>
+
+    <link name="wheels">
+        <visual>
+            <origin
+                xyz="6.9388939039072283776e-18 -2.7755575615628913511e-17 0.0044450000000000045031"
+                rpy="1.570796326794896558 -0 3.2025880195782256339e-17" />
+            <geometry>
+                <mesh filename="file://$(find test_robot)/meshes/wheels.stl" />
+            </geometry>
+            <material name="wheels_material">
+                <color
+                    rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="6.9388939039072283776e-18 -2.7755575615628913511e-17 0.0044450000000000045031"
+                rpy="1.570796326794896558 -0 3.2025880195782256339e-17" />
+            <geometry>
+                <mesh filename="file://$(find test_robot)/meshes/wheels.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin
+                xyz="5.6960313902291965294e-18 -2.9854147664030830535e-17 -0.014077259076037539065"
+                rpy="0 0 0" />
+            <mass value="0.1154098713063179682" />
+            <inertia ixx="5.2283748678023338598e-05" ixy="2.9450165228832919557e-21" ixz="0"
+                iyy="5.2283748678023311493e-05" iyz="0" izz="9.5835774846088312784e-05" />
+        </inertial>
+    </link>
+
+    <joint name="right_wheel_joint" type="continuous">
+        <origin xyz="0.1499331502082186518 -0.058318893075270938908 0.027206265999523703697"
+            rpy="-1.570796326794896558 1.2027147718070467786 0" />
+        <parent link="base" />
+        <child link="wheels" />
+        <axis xyz="0 0 1" />
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.5" />
+    </joint>
+
+    <link name="wheels_2">
+        <visual>
+            <origin xyz="0 0 0.0044450000000000045031"
+                rpy="1.570796326794896558 -0 -1.5904821510200680061e-17" />
+            <geometry>
+                <mesh filename="file://$(find test_robot)/meshes/wheels.stl" />
+            </geometry>
+            <material name="wheels_material">
+                <color
+                    rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.0044450000000000045031"
+                rpy="1.570796326794896558 -0 -1.5904821510200680061e-17" />
+            <geometry>
+                <mesh filename="file://$(find test_robot)/meshes/wheels.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin
+                xyz="-1.2428625136780312705e-18 -2.0985720484019147135e-18 -0.014077259076037539065"
+                rpy="0 0 0" />
+            <mass value="0.1154098713063179682" />
+            <inertia ixx="5.228374867802329794e-05" ixy="-1.3228532352958609618e-21" ixz="0"
+                iyy="5.2283748678023325045e-05" iyz="0" izz="9.5835774846088312784e-05" />
+        </inertial>
+    </link>
+
+    <joint name="left_wheel_joint" type="continuous">
+        <origin xyz="0.14993315020821862404 0.14168110692472901668 0.027206265999523707166"
+            rpy="-1.570796326794896558 -0.40810286715460225571 3.141592653589793116" />
+        <parent link="base" />
+        <child link="wheels_2" />
+        <axis xyz="0 0 1" />
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.5" />
+    </joint>
+
+
+</robot>
