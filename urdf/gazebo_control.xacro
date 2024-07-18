@@ -1,42 +1,15 @@
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="jim_bot">
-    <gazebo>
-        <plugin name='differential_drive_controller' filename='libgazebo_ros_diff_drive.so'>
-       
-            <!-- Misc configs-->
-            <alwaysOn>true</alwaysOn>
-            <legacyMode>false</legacyMode>
-            <updateRate>10</updateRate>
-            <rosDebugLevel>na</rosDebugLevel>
-
-            <!-- Wheel Information -->
-            <wheelSeparation>0.155</wheelSeparation>
-            <wheelDiameter>0.066</wheelDiameter>
-
-            <!-- Joints -->
-            <leftJoint>left_wheel_joint</leftJoint>
-            <rightJoint>right_wheel_joint</rightJoint>
-            
-            <!-- Limits -->
-            <wheelTorque>10</wheelTorque>
-            <wheelAcceleration>2.0</wheelAcceleration>
-            <torque>5</torque>
-
-            <!-- topics  -->
-            <commandTopic>cmd_vel</commandTopic>
-            <odometryTopic>odom</odometryTopic>
-            <odometrySource>world</odometrySource>    <!-- odometrySource options "world" "encoder" --> 
-            
-            <!-- Frames -->
-            <odometryFrame>odom</odometryFrame>
-            <robotBaseFrame>base_link</robotBaseFrame>
-            
-            <!-- outputs -->
-            <publishTf>1</publishTf>
-            <publishOdomTF>true</publishOdomTF>
-            <publishWheelTF>true</publishWheelTF>
-            <publishWheelJointState>true</publishWheelJointState>
-
-        </plugin>
-    </gazebo>
-</robot>
+<plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+  <left_joint>left_wheel_joint</left_joint>
+  <right_joint>right_wheel_joint</right_joint>
+  <wheel_separation>1.25</wheel_separation>
+  <wheel_radius>0.3</wheel_radius>
+  <odom_publish_frequency>1</odom_publish_frequency>
+  <max_linear_acceleration>1</max_linear_acceleration>
+  <min_linear_acceleration>-1</min_linear_acceleration>
+  <max_angular_acceleration>2</max_angular_acceleration>
+  <min_angular_acceleration>-2</min_angular_acceleration>
+  <max_linear_velocity>0.5</max_linear_velocity>
+  <min_linear_velocity>-0.5</min_linear_velocity>
+  <max_angular_velocity>1</max_angular_velocity>
+  <min_angular_velocity>-1</min_angular_velocity>
+  </plugin>

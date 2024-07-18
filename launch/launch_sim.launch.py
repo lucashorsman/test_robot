@@ -30,18 +30,28 @@ def generate_launch_description():
     gz_node = IncludeLaunchDescription( #launches gazebo with ros stuff
       PythonLaunchDescriptionSource([os.path.join(
          get_package_share_directory('ros_gz_sim'),'launch'),
-         '/gz_sim.launch.py'])
+         '/gz_sim.launch.py']), launch_arguments={'use_sim_time': 'True', 'gz_args': 'shapes.sdf',  }.items()
     )
     spawn_robot = IncludeLaunchDescription( #launches the robot in gazebo
       PythonLaunchDescriptionSource([os.path.join(
          get_package_share_directory('ros_gz_sim'),'launch'),
          '/gz_spawn_model.launch.py']),launch_arguments={'topic': 'robot_description'}.items()
     )
+    bridge = Node(
+            package='ros_gz_bridge',
+            executable='parameter_bridge',
+            arguments=['/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
+                      '/odometry@nav_msgs/msg/Odometry@gz.msgs.Odometry'],
+            parameters=[{'qos_overrides.subscriber.reliability': 'reliable',
+                        }],
+            output='screen'
+        )
 
 
     # Launch them all!
     return LaunchDescription([
         rviz_node,
         gz_node,
+        bridge,
         spawn_robot
     ])
